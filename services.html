@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registration Success - Postal RMS Bank</title>
+  <title>Services - Postal RMS Bank</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
@@ -22,11 +22,11 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="products.html">Products</a>
-        <a href="services.html">Services</a>
+        <a href="services.html" class="active">Services</a>
         <a href="downloads.html">Downloads</a>
         <a href="news.html">News & Events</a>
         <a href="contact.html">Contact Us</a>
-        <a href="registration.html">New Registration</a>
+        <a href="registration.html" class="btn-nav">Register Now</a>
       </nav>
     </div>
   </header>
@@ -34,16 +34,25 @@
   <main>
     <section class="section">
       <div class="container">
-        <div class="success-box" style="max-width:700px;margin:0 auto">
-          <h2>&#9989; Registration Confirmation</h2>
-          <p>You have successfully registered for online facility.</p>
-          <div class="reg-number" id="regNumber">Regisration No: ----</div>
-          <p><strong>Maximum Response Time</strong><br>Ten Days</p>
-          <p style="margin-top:1rem">Please note the registration number for future correspondence with the bank.</p>
-          <div class="form-actions">
-            <a href="index.html" class="btn btn-primary">Go to Home</a>
-            <a href="registration.html" class="btn btn-secondary" style="color:var(--text);border-color:var(--border)">New Registration</a>
-          </div>
+        <h2 class="section-title">Loan to Members</h2>
+        <p class="section-subtitle">Supporting our members with financial assistance</p>
+        <div class="form-container" style="max-width:900px">
+          <p>We are having over 15,000 members from Department of Post, Railways Mail Service consisting of 5 States and 1 UT from Haryana, Punjab, J&K, Himachal Pradesh, Chandigarh & Delhi. Any employee from Department of Post, Railways Mail Service consisting from Haryana, Punjab, J&K, Himachal Pradesh, Chandigarh & Delhi can apply for membership, and he/she can become member. Minimum Ten shares (@ 50/-) are required, and member will have to deposit Rs. 500/- as CTS balance per month by way of recovery schedule.</p>
+          <br>
+          <h3 style="color:var(--primary);margin-bottom:1rem">Member-Ship Fee</h3>
+          <p><strong>Rs. 1,500/-</strong></p>
+          <br>
+          <h3 style="color:var(--primary);margin-bottom:1rem">Purpose</h3>
+          <p>To meet personal/family expenses like marriage/education/family functions etc. "except of speculative / prohibited nature".</p>
+          <br>
+          <h3 style="color:var(--primary);margin-bottom:1rem">Eligibility</h3>
+          <p>All working Postal & R.M.S. Personnels with existing member. The member required to purchase the shares (@ 50/-).</p>
+          <br>
+          <h3 style="color:var(--primary);margin-bottom:1rem">Amount of Loan</h3>
+          <p>The loan amount is 20 times of shares held in member account.</p>
+          <br>
+          <h3 style="color:var(--primary);margin-bottom:1rem">Securities</h3>
+          <p>Two sureties (existing members not less then having six months service).</p>
         </div>
       </div>
     </section>
@@ -81,14 +90,5 @@
     </div>
   </footer>
   <script src="js/main.js"></script>
-  <script>
-    const regNo = sessionStorage.getItem('regNo');
-    const regDate = sessionStorage.getItem('regDate');
-    if (regNo) {
-      document.getElementById('regNumber').textContent = `Registration No: ${regNo}`;
-    } else {
-      document.getElementById('regNumber').textContent = 'Registration No: ----';
-    }
-  </script>
 </body>
 </html>
