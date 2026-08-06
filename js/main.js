@@ -42,4 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  const dateEl = document.getElementById('lastUpdated');
+  if (dateEl) {
+    const now = new Date();
+    const options = { day: '2-digit', month: 'long', year: 'numeric' };
+    dateEl.textContent = 'Last updated on ' + now.toLocaleDateString('en-IN', options);
+  }
 });
