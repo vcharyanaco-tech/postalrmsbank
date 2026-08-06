@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Success - Postal RMS Bank</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <img src="assets/favicon.png" alt="Postal RMS Bank">
+        <div class="logo-text">
+          <span class="logo-title">Postal RMS Bank</span>
+          <span class="logo-subtitle">Postal And RMS Employees Co-op Bank Ltd.</span>
+        </div>
+      </a>
+      <button class="mobile-toggle" aria-label="Toggle menu">&#9776;</button>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="registration.html">New Registration</a>
+        <a href="search.html">Search</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="success-box" style="max-width:700px;margin:0 auto">
+          <h2>&#9989; Registration Confirmation</h2>
+          <p>You have successfully registered for online facility.</p>
+          <div class="reg-number" id="regNumber">Regisration No: ----</div>
+          <p><strong>Maximum Response Time</strong><br>Ten Days</p>
+          <p style="margin-top:1rem">Please note the registration number for future correspondence with the bank.</p>
+          <div class="form-actions">
+            <a href="index.html" class="btn btn-primary">Go to Home</a>
+            <a href="registration.html" class="btn btn-secondary" style="color:var(--text);border-color:var(--border)">New Registration</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div>
+        <h4>Postal RMS Bank</h4>
+        <p style="font-size:0.85rem;color:#cbd5e0">Postal And RMS Employees Co-op Bank Ltd.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="registration.html">New Registration</a></li>
+          <li><a href="search.html">Search Registration</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Documents</h4>
+        <ul>
+          <li><a href="#documents">Forms & Reports</a></li>
+          <li><a href="assets/docs/RMS.pdf" target="_blank" rel="noopener">RMS Details</a></li>
+          <li><a href="assets/docs/SERVICE_CHARGES.pdf" target="_blank" rel="noopener">Service Charges</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Postal And RMS Employees Co-op Bank Ltd. All rights reserved.
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script>
+    const regNo = sessionStorage.getItem('regNo');
+    const regDate = sessionStorage.getItem('regDate');
+    if (regNo) {
+      document.getElementById('regNumber').textContent = `Registration No: ${regNo}`;
+    } else {
+      document.getElementById('regNumber').textContent = 'Registration No: ----';
+    }
+  </script>
+</body>
+</html>

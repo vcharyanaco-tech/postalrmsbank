@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Registration - Postal RMS Bank</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <img src="assets/favicon.png" alt="Postal RMS Bank">
+        <div class="logo-text">
+          <span class="logo-title">Postal RMS Bank</span>
+          <span class="logo-subtitle">Postal And RMS Employees Co-op Bank Ltd.</span>
+        </div>
+      </a>
+      <button class="mobile-toggle" aria-label="Toggle menu">&#9776;</button>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="registration.html" class="active">New Registration</a>
+        <a href="search.html">Search</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Registration Form for Availing Online Facility</h2>
+        <p class="section-subtitle">Fill in your details to register for online banking</p>
+        <div class="form-container">
+          <form id="registrationForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="txtname">Full Name</label>
+                <input type="text" id="txtname" placeholder="Enter your full name" required>
+                <span class="error-msg">Please enter your name</span>
+              </div>
+              <div class="form-group">
+                <label for="txtfname">Father's Name</label>
+                <input type="text" id="txtfname" placeholder="Enter father's name" required>
+                <span class="error-msg">Please enter father's name</span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="txtmem">Membership No</label>
+                <input type="text" id="txtmem" placeholder="5 digit membership number" maxlength="5" pattern="\d{5}" required>
+                <span class="error-msg">Enter a valid 5-digit membership number</span>
+              </div>
+              <div class="form-group">
+                <label for="txtoff">Office of Posting</label>
+                <input type="text" id="txtoff" placeholder="Enter office of posting" required>
+                <span class="error-msg">Please enter office of posting</span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="txtpan">PAN No</label>
+                <input type="text" id="txtpan" placeholder="ABCDE1234F" maxlength="10" style="text-transform:uppercase" required>
+                <span class="error-msg">Enter valid PAN (e.g. ABCDE1234F)</span>
+              </div>
+              <div class="form-group">
+                <label for="txtaadhar">Aadhaar No</label>
+                <input type="text" id="txtaadhar" placeholder="12 digit Aadhaar number" maxlength="12" pattern="\d{12}" required>
+                <span class="error-msg">Enter a valid 12-digit Aadhaar number</span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="txtmobile">Mobile No</label>
+                <input type="tel" id="txtmobile" placeholder="10 digit mobile number" maxlength="10" pattern="\d{10}" required>
+                <span class="error-msg">Enter a valid 10-digit mobile number</span>
+              </div>
+              <div class="form-group">
+                <label for="txtdob">Date of Birth</label>
+                <input type="date" id="txtdob" required>
+                <span class="error-msg">Please enter date of birth</span>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Submit Registration</button>
+              <button type="reset" class="btn btn-secondary" style="color:var(--text);border-color:var(--border)">Clear</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div>
+        <h4>Postal RMS Bank</h4>
+        <p style="font-size:0.85rem;color:#cbd5e0">Postal And RMS Employees Co-op Bank Ltd.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="registration.html">New Registration</a></li>
+          <li><a href="search.html">Search Registration</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Documents</h4>
+        <ul>
+          <li><a href="#documents">Forms & Reports</a></li>
+          <li><a href="assets/docs/RMS.pdf" target="_blank" rel="noopener">RMS Details</a></li>
+          <li><a href="assets/docs/SERVICE_CHARGES.pdf" target="_blank" rel="noopener">Service Charges</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Postal And RMS Employees Co-op Bank Ltd. All rights reserved.
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = this;
+      let valid = true;
+
+      form.querySelectorAll('input[required]').forEach(input => {
+        const group = input.closest('.form-group');
+        if (!input.value.trim()) {
+          valid = false;
+          if (group) group.classList.add('has-error');
+        } else {
+          if (group) group.classList.remove('has-error');
+        }
+      });
+
+      if (!valid) return;
+
+      const pan = document.getElementById('txtpan').value.trim();
+      const aadhar = document.getElementById('txtaadhar').value.trim();
+      const mobile = document.getElementById('txtmobile').value.trim();
+      const mem = document.getElementById('txtmem').value.trim();
+
+      if (!/^[A-Za-z]{5}\d{4}[A-Za-z]{1}$/.test(pan)) {
+        const group = document.getElementById('txtpan').closest('.form-group');
+        group.classList.add('has-error');
+        valid = false;
+      }
+      if (!/^\d{12}$/.test(aadhar)) {
+        const group = document.getElementById('txtaadhar').closest('.form-group');
+        group.classList.add('has-error');
+        valid = false;
+      }
+      if (!/^\d{10}$/.test(mobile)) {
+        const group = document.getElementById('txtmobile').closest('.form-group');
+        group.classList.add('has-error');
+        valid = false;
+      }
+      if (!/^\d{5}$/.test(mem)) {
+        const group = document.getElementById('txtmem').closest('.form-group');
+        group.classList.add('has-error');
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      const regNo = Math.floor(10000 + Math.random() * 90000);
+      sessionStorage.setItem('regNo', regNo);
+      sessionStorage.setItem('regDate', new Date().toLocaleDateString('en-GB'));
+      location.href = 'success.html';
+    });
+  </script>
+</body>
+</html>

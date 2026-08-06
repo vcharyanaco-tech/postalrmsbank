@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Registration - Postal RMS Bank</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <img src="assets/favicon.png" alt="Postal RMS Bank">
+        <div class="logo-text">
+          <span class="logo-title">Postal RMS Bank</span>
+          <span class="logo-subtitle">Postal And RMS Employees Co-op Bank Ltd.</span>
+        </div>
+      </a>
+      <button class="mobile-toggle" aria-label="Toggle menu">&#9776;</button>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="registration.html">New Registration</a>
+        <a href="search.html" class="active">Search</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Search Registration</h2>
+        <p class="section-subtitle">Find your registration details</p>
+        <div class="form-container" style="max-width:600px">
+          <form id="searchForm" novalidate>
+            <div class="form-group">
+              <label for="txtreg">Registration Number</label>
+              <input type="text" id="txtreg" placeholder="Enter registration number" required>
+              <span class="error-msg">Please enter registration number</span>
+            </div>
+            <div class="form-group">
+              <label for="txtdob">Date of Birth</label>
+              <input type="date" id="txtdob" required>
+              <span class="error-msg">Please enter date of birth</span>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Search</button>
+              <button type="reset" class="btn btn-secondary" style="color:var(--text);border-color:var(--border)">Clear</button>
+            </div>
+          </form>
+          <div id="searchResult" style="margin-top:1.5rem;display:none"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div>
+        <h4>Postal RMS Bank</h4>
+        <p style="font-size:0.85rem;color:#cbd5e0">Postal And RMS Employees Co-op Bank Ltd.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="registration.html">New Registration</a></li>
+          <li><a href="search.html">Search Registration</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Documents</h4>
+        <ul>
+          <li><a href="#documents">Forms & Reports</a></li>
+          <li><a href="assets/docs/RMS.pdf" target="_blank" rel="noopener">RMS Details</a></li>
+          <li><a href="assets/docs/SERVICE_CHARGES.pdf" target="_blank" rel="noopener">Service Charges</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Postal And RMS Employees Co-op Bank Ltd. All rights reserved.
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('searchForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = this;
+      let valid = true;
+      form.querySelectorAll('input[required]').forEach(input => {
+        const group = input.closest('.form-group');
+        if (!input.value.trim()) {
+          valid = false;
+          if (group) group.classList.add('has-error');
+        } else {
+          if (group) group.classList.remove('has-error');
+        }
+      });
+      if (!valid) return;
+
+      const result = document.getElementById('searchResult');
+      result.style.display = 'block';
+      result.innerHTML = `
+        <div class="success-box">
+          <h3>Search Feature Requires Backend</h3>
+          <p style="margin-top:0.5rem">This static frontend is ready to be connected to your backend API for live search results.</p>
+          <p style="margin-top:0.5rem;font-size:0.9rem;color:var(--text-muted)">Registration No: <strong>${document.getElementById('txtreg').value}</strong></p>
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html>
