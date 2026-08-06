@@ -26,21 +26,51 @@
         <a href="downloads.html">Downloads</a>
         <a href="news.html">News & Events</a>
         <a href="contact.html">Contact Us</a>
-        <a href="registration.html" class="btn-nav">Register Now</a>
       </nav>
     </div>
   </header>
-
   <main>
-    <section class="hero">
-      <h1>Welcome to Postal RMS Bank</h1>
-      <p>Secure, modern, and convenient banking services for Postal and RMS Employees. Register online to access our digital facilities.</p>
-      <div class="hero-buttons">
-        <a href="registration.html" class="btn btn-primary">New Registration</a>
-        <a href="search.html" class="btn btn-secondary">Search Registration</a>
+    <section class="hero-carousel">
+      <div class="carousel">
+        <div class="carousel-slide active">
+          <img src="assets/images/92.jpg" alt="Postal RMS Bank">
+          <div class="carousel-caption">
+            <h1>Welcome to Postal RMS Bank</h1>
+            <p>Secure, modern, and convenient banking services for Postal and RMS Employees</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="assets/images/team1.jpg" alt="Our Team">
+          <div class="carousel-caption">
+            <h1>Trusted Banking Partner</h1>
+            <p>Serving Postal and RMS Employees since 1928</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="assets/images/sb1.jpg" alt="Banking Services">
+          <div class="carousel-caption">
+            <h1>Modern Banking Solutions</h1>
+            <p>Digital services for the modern postal employee</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="assets/images/sb.jpg" alt="Our Branches">
+          <div class="carousel-caption">
+            <h1>Convenient Access</h1>
+            <p>Head Office at Ambala Cantt and Branch Office at New Delhi</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="assets/images/921.jpg" alt="Customer Service">
+          <div class="carousel-caption">
+            <h1>Customer First</h1>
+            <p>Dedicated to providing exceptional banking services</p>
+          </div>
+        </div>
       </div>
+      <button class="carousel-btn prev" aria-label="Previous">&#10094;</button>
+      <button class="carousel-btn next" aria-label="Next">&#10095;</button>
     </section>
-
     <section class="section">
       <div class="container">
         <h2 class="section-title">About The Bank</h2>
@@ -59,7 +89,6 @@
         </div>
       </div>
     </section>
-
     <section class="section section-alt">
       <div class="container">
         <h2 class="section-title">Our Services</h2>
@@ -67,9 +96,8 @@
         <div class="card-grid">
           <div class="card">
             <div class="card-icon">&#128100;</div>
-            <h3>New Registration</h3>
-            <p>Register for online banking facilities. Fill in your details and get your registration number instantly.</p>
-            <a href="registration.html" class="btn btn-primary" style="margin-top:1rem">Register Now</a>
+            <h3>Membership</h3>
+            <p>Join our community of over 15,000 members from Department of Post and Railways Mail Service. Minimum Ten shares (@ 50/-) required.</p>
           </div>
           <div class="card">
             <div class="card-icon">&#128269;</div>
@@ -86,7 +114,6 @@
         </div>
       </div>
     </section>
-
     <section class="section" id="news">
       <div class="container">
         <h2 class="section-title">News & Updates</h2>
@@ -103,11 +130,6 @@
             <p>Offering Higher rate of interest @ 7.75% for 1-3 years and 0.50% extra for Senior Citizens.</p>
           </div>
           <div class="card">
-            <div class="card-icon">&#128241;</div>
-            <h3>Mobile Application</h3>
-            <p>Mobile application launched by the Bank for its Members/Depositors. Click here to download.</p>
-          </div>
-          <div class="card">
             <div class="card-icon">&#128179;</div>
             <h3>Service Charges</h3>
             <p>Click here to know Service Charges for various services offered by the Bank.</p>
@@ -120,12 +142,19 @@
           <div class="card">
             <div class="card-icon">&#128197;</div>
             <h3>Annual General Meeting</h3>
-            <p>Notice for Annual General Body Meeting. Interest on loan is @ 9.90% on day-to-day basis. Minimum Credit Limit is Rs 7 Lacs, maximum Rs 11 Lacs or 32 times basic pay whichever is lower.</p>
+            <p>Notice for Annual General Body Meeting. Interest on loan is @ 9.90% on day-to-day basis.</p>
           </div>
+          <div class="card">
+            <div class="card-icon">&#128181;</div>
+            <h3>CTS Amount Reduced</h3>
+            <p>CTS Amount Rs 500/-. No attestation from office for CTS withdrawal is required.</p>
+          </div>
+        </div>
+        <div style="text-align:center; margin-top:2rem">
+          <a href="news.html" class="btn btn-primary">View All News & Events</a>
         </div>
       </div>
     </section>
-
     <section class="section section-alt" id="documents">
       <div class="container">
         <h2 class="section-title">Documents & Forms</h2>
@@ -179,7 +208,6 @@
         </div>
       </div>
     </section>
-
     <section class="section">
       <div class="container">
         <h2 class="section-title">Contact Us</h2>
@@ -219,7 +247,6 @@
       </div>
     </section>
   </main>
-
   <footer class="footer">
     <div class="footer-container">
       <div>
@@ -243,7 +270,6 @@
         <ul>
           <li><a href="news.html">News & Events</a></li>
           <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="registration.html">New Registration</a></li>
           <li><a href="search.html">Search Registration</a></li>
           <li><a href="privacy.html">Privacy Policy</a></li>
         </ul>
@@ -254,5 +280,24 @@
     </div>
   </footer>
   <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const slides = document.querySelectorAll('.carousel-slide');
+      const prevBtn = document.querySelector('.carousel-btn.prev');
+      const nextBtn = document.querySelector('.carousel-btn.next');
+      let currentSlide = 0;
+      const totalSlides = slides.length;
+      function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        currentSlide = (index + totalSlides) % totalSlides;
+        slides[currentSlide].classList.add('active');
+      }
+      if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+        nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+      }
+      setInterval(() => showSlide(currentSlide + 1), 5000);
+    });
+  </script>
 </body>
 </html>
