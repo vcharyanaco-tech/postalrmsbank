@@ -498,6 +498,32 @@ body {
   background: var(--primary);
 }
 
+.carousel-welcome {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
+  max-width: 900px;
+  pointer-events: none;
+}
+
+.carousel-welcome h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-welcome p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
 .carousel {
   position: relative;
   width: 100%;
@@ -529,29 +555,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.5);
-}
-
-.carousel-caption {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: #fff;
-  padding: 2rem;
-  max-width: 800px;
-}
-
-.carousel-caption h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.carousel-caption p {
-  font-size: 1.1rem;
-  opacity: 0.95;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  filter: brightness(0.45);
 }
 
 .carousel-btn {
@@ -587,11 +591,11 @@ body {
     min-height: 300px;
   }
 
-  .carousel-caption h1 {
+  .carousel-welcome h1 {
     font-size: 1.75rem;
   }
 
-  .carousel-caption p {
+  .carousel-welcome p {
     font-size: 0.95rem;
   }
 
